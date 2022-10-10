@@ -51,12 +51,12 @@ public class AddLeaveApplicationCommandHandler : IRequestHandler<AddLeaveApplica
             Subject = leaveApplication.LeaveType == LeaveType.AnnualLeave ? "Annual Leave" : "Sick Leave",
             Start = new DateTimeTimeZone
             {
-                DateTime = leaveApplication.From.ToString("yyyy-MM-ddTHH:mm:ss"),
+                DateTime = leaveApplication.From.Date.ToString("yyyy-MM-ddTHH:mm:ss"),
                 TimeZone = "W. Australia Standard Time"
             },
             End = new DateTimeTimeZone
             {
-                DateTime = leaveApplication.To.AddDays(1).ToString("yyyy-MM-ddTHH:mm:ss"),
+                DateTime = leaveApplication.To.Date.AddDays(1).ToString("yyyy-MM-ddTHH:mm:ss"),
                 TimeZone = "W. Australia Standard Time"
             },
             IsAllDay = true,

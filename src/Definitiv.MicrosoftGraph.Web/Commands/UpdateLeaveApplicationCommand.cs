@@ -62,13 +62,13 @@ public class UpdateLeaveApplicationCommandHandler : IRequestHandler<UpdateLeaveA
 
         @event.Start = new DateTimeTimeZone
         {
-            DateTime = leaveApplication.From.ToString("yyyy-MM-ddTHH:mm:ss"),
+            DateTime = leaveApplication.From.Date.ToString("yyyy-MM-ddTHH:mm:ss"),
             TimeZone = "W. Australia Standard Time"
         };
 
         @event.End = new DateTimeTimeZone
         {
-            DateTime = leaveApplication.To.AddDays(1).ToString("yyyy-MM-ddTHH:mm:ss"),
+            DateTime = leaveApplication.To.Date.AddDays(1).ToString("yyyy-MM-ddTHH:mm:ss"),
             TimeZone = "W. Australia Standard Time"
         };
 
